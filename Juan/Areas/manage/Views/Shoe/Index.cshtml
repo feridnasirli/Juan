@@ -1,0 +1,38 @@
+﻿@using Juan.Models
+@using Juan.Controllers
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<Shoe>
+@{
+    ViewData["Title"] = "Index";
+}
+<div>
+    <a asp-action="create" asp-controller="shoe" class="btn btn-success" >Create</a>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">SalePrice</th>
+      <th scope="col">DisCountPrice</th>
+      <th scope="col">Action</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  @foreach (var item in Model)
+    {
+      <tr>
+      <td>@item.Name</td>
+      <td>@item.SalePrice</td>
+      <td>@item.DisCountPrice</td>
+      <td>
+           <img style="width:150px" src="~/upload/shoes/@item.Image">
+      </td>
+      <td>
+                  <a asp-action="update" asp-controller="shoe" asp-route-id="@item.Id" class="btn btn-info" >Update</a>
+                  <a asp-action="delete" asp-controller="shoe" asp-route-id="@item.Id" class="btn btn-danger" >Delete</a>
+      </td>
+
+    </tr>
+    }
+

@@ -1,0 +1,38 @@
+﻿@using Juan.Models
+@{
+    ViewData["Title"] = "Update";
+}
+@model Shoe
+<div>
+<div class="container">
+<form method="post" asp-action="update" enctype="multipart/form-data">
+   <div class="row">
+    <div class="col-md-3">
+     <div class="form-group">
+    <label asp-for="@Model.Name">Name</label>
+    <input asp-for="@Model.Name" class="form-control"  placeholder="Name">
+    </div>
+  </div>
+  <div class="col-md-3">
+     <div class="form-group">
+    <label asp-for="@Model.SalePrice">SalePrice</label>
+    <input asp-for="@Model.SalePrice" class="form-control"  placeholder="SalePrice">
+    </div>
+  </div>
+  <div class="col-md-3">
+     <div class="form-group">
+    <label asp-for="@Model.DisCountPrice">DisCountPrice</label>
+    <input asp-for="@Model.DisCountPrice" class="form-control"  placeholder="DisCountPrice">
+    </div>
+  </div>
+ </div>
+
+  <div class="form-group">
+    <label asp-for="@Model.ImageFile">ImageFile...</label>
+    <input asp-for="@Model.ImageFile" class="form-control-file">
+    <span asp-validation-for="@Model.ImageFile" class="text-danger"></span>
+  </div>
+  <button type="submit" class="btn btn-primary">Create</button>
+</form>
+</div>
+</div>
